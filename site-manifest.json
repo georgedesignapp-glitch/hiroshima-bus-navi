@@ -1,0 +1,36 @@
+{
+  "format": "tar.gz",
+  "parts": [
+    {
+      "file": "site.tar.gz.part000",
+      "bytes": 20971520,
+      "sha256": "12227f4b23cbb3be87e50578328301f3b13878d941223e63e220082bfb9d20ba"
+    },
+    {
+      "file": "site.tar.gz.part001",
+      "bytes": 20971520,
+      "sha256": "9b8bbda410be7ef358c6e59612f4b2c4092815094888bbf0e78d1091bb4458a0"
+    },
+    {
+      "file": "site.tar.gz.part002",
+      "bytes": 20971520,
+      "sha256": "b67c4fab200791bffc39176069596dcdf5c1191d2c0b8cc77824bb29f41e5b6c"
+    },
+    {
+      "file": "site.tar.gz.part003",
+      "bytes": 20971520,
+      "sha256": "6d5506f95c76fdbb850b8bd4f8fa2ad92dad18172652f92fed797bf2e69dba27"
+    },
+    {
+      "file": "site.tar.gz.part004",
+      "bytes": 20971520,
+      "sha256": "12f4d13e086b5ebf7127a6f9e6d8c8869d462e36c4aeedc8553cc877ec96a977"
+    },
+    {
+      "file": "site.tar.gz.part005",
+      "bytes": 13853340,
+      "sha256": "5679a9e95a81cb36441540b04cb475c24f329d658453492867c08b33eec33298"
+    }
+  ],
+  "archive_sha256": "1236610a639a1ce5690525840fa16563e6c434684ca8a358c595089e578f6162"
+}
