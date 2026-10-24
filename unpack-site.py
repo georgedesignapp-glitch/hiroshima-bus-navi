@@ -27,3 +27,16 @@ with tarfile.open(archive,'r:gz') as tar:
     if any(not m.isfile() for m in members):raise ValueError('Only regular static files allowed')
     tar.extractall(root/'_site',filter='data')
 print(f'Verified and unpacked {len(members)} static files')
+patch = root/'site-update.json'
+if patch.exists():
+    if patch.stat().st_size > 2_000_000: raise ValueError('Shell update too large')
+    update = json.loads(patch.read_text(encoding='utf-8'))
+    allowed = {'js/transit-app.js', 'pwa-boot.js', 'relay-client.js', 'sw.js'}
+    files = update['files']
+    if update['version'] != 1 or len(files) != len(allowed) or {f['path'] for f in files} != allowed:
+        raise ValueError('Unexpected shell update files')
+    for item in files:
+        data = item['content'].encode('utf-8')
+        if hashlib.sha256(data).hexdigest() != item['sha256']: raise ValueError('Shell checksum mismatch')
+        (root/'_site'/item['path']).write_bytes(data)
+    print(f'Applied {len(files)} verified shell updates')
